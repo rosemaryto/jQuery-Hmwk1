@@ -63,12 +63,31 @@
             });
         
         //24
-        $('input').focus(function () {
-            $('input').css('background-color', 'lightgray');
-        })
-        $('input').focusout(function () {
-            $('input').css('background-color', 'white');
-        })
+        $('#color').focus(function () {
+            $('#color').css('background-color', 'lightgray');
+        });
+        $('#color').blur(function () {
+            $('#color').css('background-color', 'white');
+        });
+
+        //25
+        
+        $('#red').submit(function (event) {
+            var isValid = true;
+            
+            var urInfo = $('#red');
+            if (urInfo === '') {
+                window.alert('Fields are required');
+                $('body #red').css('border-color','red');
+                isValid = false;
+            } else {
+                $('body #red').css('border-color','green');
+            }
+
+            if (isValid === false) {
+                event.preventDefault();
+            }
+        });
 	  });
   </script>
 </head>
@@ -95,6 +114,14 @@
     <div id="div3"></div><br><br>
 
     <input type="text" id="color"><br><br>
+
+    <form action="">
+        <label for="name">Name</label>
+        <input id="red" type="text" required>
+        <label for="email">Email</label>
+        <input id="red" type="text" required>
+        <button type="submit">Submit</button>
+    </form>
 
 
 
