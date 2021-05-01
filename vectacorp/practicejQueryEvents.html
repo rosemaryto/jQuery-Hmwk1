@@ -55,6 +55,12 @@
             window.alert(e.target.nodeName + ' triggered the event.');
         });
         $('a:visited').css('color','red');
+
+        //23
+        $(window).resize(function () {
+                $('#div3').text('width ' + ($(window).width()) + ' height ' + ($(window).height()));
+          
+            });
 	  });
   </script>
 </head>
@@ -72,9 +78,14 @@
 	<button id="twoButton">Button 2</button><br><br>
 
     <div id="div1" style="width:400px;height:400px;background-color: black;color: white;">DIV1</div><br><br>
+
     <div id="div2" style="width:400px;height:400px;background-color: silver;">DIV2</div><br><br>
     <span></span><br><br>
-    <a href="https://www.google.com/" target="_blank">link</a>
+
+    <a href="https://www.google.com/" target="_blank">link</a><br><br>
+
+    <div id="div3"></div><br><br>
+
 
 
 	
