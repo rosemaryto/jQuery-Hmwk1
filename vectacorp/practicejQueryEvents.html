@@ -49,6 +49,12 @@
                     $('span').append('Clicked the div<br>');
                 }
                 }, '#div2');
+        //22
+        $('a').click(function(e){
+            e.preventDefault();
+            window.alert(e.target.nodeName + ' triggered the event.');
+        });
+        $('a:visited').css('color','red');
 	  });
   </script>
 </head>
@@ -67,7 +73,9 @@
 
     <div id="div1" style="width:400px;height:400px;background-color: black;color: white;">DIV1</div><br><br>
     <div id="div2" style="width:400px;height:400px;background-color: silver;">DIV2</div><br><br>
-    <span></span>
+    <span></span><br><br>
+    <a href="https://www.google.com/" target="_blank">link</a>
+
 
 	
 </body>
