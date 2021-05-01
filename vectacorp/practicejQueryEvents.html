@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Practice with jQuery Events</title>
+  <!--<link href="styles/normalize.css" type="text/css" rel="stylesheet">-->
+  <!--<link href="styles/styles.css" type="text/css" rel="stylesheet">-->
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="/vectacorp/node_modules/jquery/dist/jquery.js"></script>
+  <script>
+	  $(document) .ready(function () {
+		  //16
+		  $('button#clickButton').click(function () {
+                window.alert("Click Method button has been clicked!");
+            });
+		  //17
+		  $('button#bindButton').bind('click', function () {
+                window.alert("Bind Method button has been clicked!");
+            });
+		  //18
+		  $('button#onButton').on('click', function () {
+                window.alert("On Method button has been clicked!");
+            });
+		  //19
+		  $('body').on('click', '#oneButton, #twoButton', function () {
+                window.alert("Button 1 or 2 has been clicked!");
+            });
+      //20
+      $('body').on({
+                mouseenter: function () {
+                    window.alert("Cursor entered the div!");
+                },
+                mouseleave: function () {
+                    window.alert("Cursor left the div!");
+                },
+                click: function () {
+                    window.alert("Cursor clicked the div!");
+                }
+                }, 'div');
+	  });
+  </script>
+</head>
+
+<body>
+	
+	<button id="clickButton">Click</button><br><br>
+
+	<button id="bindButton">Bind</button><br><br>
+
+	<button id="onButton">On</button><br><br>
+
+	<button id="oneButton">Button 1</button>
+
+	<button id="twoButton">Button 2</button><br><br>
+
+  <div style="width:400px;height:400px;background-color: silver;">DIV</div>
+
+	
+</body>
+</html>
